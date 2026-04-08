@@ -12,11 +12,12 @@
 
 body {
     text-align: center;
-    background-color: #8e5bee; /* This shows through if image is transparent */
+    background-color: #8e5bee;
     font-family: 'Pixelfy_Sans', Arial, sans-serif;
-    position: relative; /* Required for absolute positioning inside */
-    min-height: 100vh; /* Ensures body covers full height */
-    z-index: 0; /* Creates stacking context */
+    position: relative; 
+    min-height: 100vh; 
+    z-index: 0; /* para stack thank you sir */
+    cursor: url('../assets/cursorCinnamoidle.cur'), auto;
 }
 
 body::before {
@@ -48,6 +49,7 @@ input {
     outline: none;
     border-radius: 5px;
     font-family: 'Pixelfy_Sans', Arial, sans-serif;
+    cursor: url('../assets/cursorCinnamoaddhover.cur'), auto;
 }
 
 input:focus {
@@ -56,24 +58,37 @@ input:focus {
     transition: 0.5s;
 }
 
-ul li{
-    padding: 5px 15px;
-    margin: 2px 2px;
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    list-style: none;
+    padding: 0;
+    max-width: 1200px;
+    margin: 20px auto;
+    cursor: url('../assets/cursorCinnamoidle.cur'), auto;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #b274f5;
-    display:inline-block;
     border-radius: 5px;
     color: black;
     border: 2px solid white;
 }
 
 ul button {
-    color: rgb(146, 6, 6);
-    margin-left: 10em;
-
+    margin-left: 0; 
+    color: rgb(163, 34, 34);
+    cursor: url('../assets/cursoCinnamodeletehover.cur'), auto;
 }
 
 ul button:active {
     color: red;
+    cursor: url('../assets/cursorCinnamodeleteconfirm.cur'), auto;
 }
 
 button {
@@ -84,6 +99,7 @@ button {
     color: rgb(24, 158, 24);
     border-color: white;
     font-family: 'Pixelfy_Sans', Arial, sans-serif;
+    cursor: url('../assets/cursorCinnamoaddtask.cur'), auto;
 }
 
 button:hover {
@@ -95,10 +111,16 @@ button:active {
     transform: translateY(5px);
     box-shadow: 0 0;
     color: rgb(17, 240, 91);
+    cursor: url('../assets/cursorCinnamoaddconfirm.cur'), auto;
+
 }
 
 @media screen and (max-width: 920px) {
     body::before {
         background-image: url('../assets/purple\ and\ structures-small.jpg') ;
+    }
+
+    ul {
+        grid-template-columns: 1fr;  /* Single column */
     }
 }
