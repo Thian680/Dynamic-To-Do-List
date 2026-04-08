@@ -62,7 +62,7 @@ input:focus {
 
 #addTask {
     padding: 18px;
-    border-radius: 10px;
+    border-radius: 100px;
     box-shadow: 0 4px;
     margin: 10px;
     color: white;
@@ -71,6 +71,12 @@ input:focus {
     cursor: url('../assets/cursorCinnamoaddtask.cur'), auto;
     background-color: rgb(18, 190, 75);
     font-size: 20px;
+    font-weight: bold;
+}
+
+#addTask::before {
+    content: "+ ";
+    font-size: 16px;
     font-weight: bold;
 }
 
