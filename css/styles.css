@@ -53,7 +53,6 @@ input {
 }
 
 input:focus {
-    
     box-shadow: 0 5px 0px 1px rgb(106, 10, 233);
     transition: 0.5s;
 }
@@ -102,11 +101,6 @@ button {
     cursor: url('../assets/cursorCinnamoaddtask.cur'), auto;
 }
 
-button:hover {
-    transform: translateY(2.6px);
-    box-shadow: 0 3px;
-}
-
 button:active {
     transform: translateY(5px);
     box-shadow: 0 0;
@@ -116,11 +110,99 @@ button:active {
 }
 
 @media screen and (max-width: 920px) {
+    body {
+        background-color: rgb(18, 18, 56);
+    }
+
     body::before {
-        background-image: url('../assets/purple\ and\ structures-small.jpg') ;
+        background-image: url('../assets/blue-small.jpg') ;
     }
 
     ul {
-        grid-template-columns: 1fr;  /* Single column */
+        grid-template-columns: 1fr;
+        flex: 1 0 auto;
     }
+
+    ul li {
+        background-color: blue;
+        color: whitesmoke;
+    }
+
+    header {
+        background-color: rgb(62, 62, 224);
+    }
+}
+
+ /* effffffeeeeeectstsssss oy*/
+
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff; }
+}
+
+header h1 {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.volume-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(123, 57, 230, 0.9);
+    border: 3px solid white;
+    box-shadow: 0 5px 0px 1px rgb(67, 14, 136), 0 0 20px rgba(178, 116, 245, 0.6);
+    cursor: url('../assets/cursorCinnamoaddtask.cur'), pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.volume-btn:hover {
+    transform: translateY(2.6px);
+    box-shadow: 0 3px 0px 1px rgb(67, 14, 136), 0 0 25px rgba(178, 116, 245, 0.8);
+    background-color: rgba(142, 91, 238, 0.9);
+}
+
+.volume-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0px 1px rgb(67, 14, 136), 0 0 30px rgba(178, 116, 245, 1);
+}
+
+.speaker-icon {
+    font-size: 28px;
+    line-height: 1;
+    display: block;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 920px) {
+    .volume-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        left: 15px;
+        background-color: rgb(62, 62, 224);
+    }
+    
+    .speaker-icon {
+        font-size: 24px;
+    }
+}
+
+/* Animation for music playing */
+@keyframes musicPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.volume-btn.playing {
+    animation: musicPulse 2s infinite;
 }
