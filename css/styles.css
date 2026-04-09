@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
     z-index: 0;
     cursor: url('../assets/cursorCinnamoidle.cur'), auto;
+    padding-bottom: 50px;
 }
 
 body::before {
@@ -94,11 +95,13 @@ ul {
     gap: 20px;
     list-style: none;
     padding: 20px;
-    max-width: 600px;
+    width: 100%;
+    max-width: 800px;
     margin: 20px auto;
     cursor: url('../assets/cursorCinnamoidle.cur'), auto;
+    background: transparent !important;
+    box-sizing: border-box;
 }
-
 
 ul li {
     display: flex;
@@ -110,11 +113,11 @@ ul li {
     color: black;
     border: 3px solid white;
     position: relative;
-    min-height: 60px;
+    min-height: 100px;
     width: 100%;
-    max-width: 500px;
     box-shadow: 0 5px 0px 1px rgb(67, 14, 136);
     transition: transform 0.2s ease;
+    box-sizing: border-box;
 }
 
 
@@ -183,15 +186,16 @@ ul button:active {
         background-image: url('../assets/blue-small.jpg');
     }
 
-    ul {
-        max-width: 90%;
-        padding: 15px;
+   ul {
+        width: 95%;
+        padding: 15px 5px;
     }
-
+    
     ul li {
+        padding: 15px;
+        min-height: 70px;
         background-color: blue;
         color: whitesmoke;
-        max-width: 100%;
         border-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 5px 0px 1px rgb(0, 0, 100);
     }
@@ -217,4 +221,53 @@ ul button:active {
 
 header h1 {
     animation: glow 2s ease-in-out infinite;
+}
+
+
+.volume-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(123, 57, 230, 0.9);
+    border: 3px solid white;
+    box-shadow: 0 5px 0px 1px rgb(67, 14, 136), 0 0 20px rgba(178, 116, 245, 0.6);
+    cursor: pointer;
+    z-index: 9999; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 920px) {
+    .volume-btn {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgb(62, 62, 224);
+        border: 3px solid white;
+        z-index: 9999;
+        display: flex !important; /* Force display */
+        visibility: visible !important; /* Force visibility */
+        opacity: 1 !important;
+    }
+    
+    .speaker-icon {
+        font-size: 26px;
+        display: block !important;
+    }
+
+    body {
+        padding-bottom: 85px;
+    }
+
+    ul {
+        margin-bottom: 20px;
+    }
 }
