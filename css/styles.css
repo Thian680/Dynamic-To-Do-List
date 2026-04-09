@@ -162,6 +162,7 @@ ul button::after {
     border: 1.5px solid white;
     box-shadow: 0 2px 0px 1px rgba(67, 14, 136, 0.5);
     pointer-events: none;
+    font-family: 'Pixelfy_Sans', Arial, sans-serif;
 }
 
 ul button:hover {
@@ -246,25 +247,11 @@ header h1 {
 
 @media screen and (max-width: 920px) {
     .volume-btn {
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        left: 20px;
-        background-color: rgb(62, 62, 224);
-        border: 3px solid white;
-        z-index: 9999;
-        display: flex !important; /* Force display */
-        visibility: visible !important; /* Force visibility */
-        opacity: 1 !important;
+        display: none !important;
     }
     
-    .speaker-icon {
-        font-size: 26px;
-        display: block !important;
-    }
-
-    body {
-        padding-bottom: 85px;
+    #bgMusic {
+        display: none !important;
     }
 
     ul {
