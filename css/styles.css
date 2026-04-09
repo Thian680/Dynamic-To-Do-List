@@ -53,7 +53,7 @@ input {
     border-radius: 8px;
     font-family: 'Pixelfy_Sans', Arial, sans-serif;
     cursor: url('../assets/cursorCinnamoaddhover.cur'), auto;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 input:focus {
@@ -118,6 +118,7 @@ ul li {
     box-shadow: 0 5px 0px 1px rgb(67, 14, 136);
     transition: transform 0.2s ease;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 
